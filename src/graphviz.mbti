@@ -1,0 +1,32 @@
+package illusory0x0/graphviz
+
+// Values
+
+// Types and methods
+pub(all) struct Digraph {
+  edges : Array[Edge]
+  nodes : Array[Node]
+}
+impl Show for Digraph
+
+pub struct Edge {
+  from : Int
+  to : Int
+  label : String
+}
+impl Edge {
+  new(from~ : Int, to~ : Int, label~ : String = ..) -> Self
+}
+
+pub struct Node {
+  id : Int
+  label : String
+}
+impl Node {
+  new(id~ : Int, label~ : String) -> Self
+}
+
+// Type aliases
+
+// Traits
+
