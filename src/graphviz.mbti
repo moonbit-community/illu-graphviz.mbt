@@ -1,4 +1,4 @@
-package illusory0x0/graphviz
+package "illusory0x0/graphviz"
 
 // Values
 
@@ -9,7 +9,7 @@ pub(all) struct Digraph {
 }
 impl Show for Digraph
 
-pub struct Edge {
+pub(all) struct Edge {
   from : Int
   to : Int
   label : String
@@ -18,12 +18,20 @@ impl Edge {
   new(from~ : Int, to~ : Int, label~ : String = ..) -> Self
 }
 
-pub struct Node {
+pub(all) struct Node {
   id : Int
   label : String
 }
 impl Node {
   new(id~ : Int, label~ : String) -> Self
+}
+
+pub(all) struct Tree {
+  label : String
+  children : Array[Tree]
+}
+impl Tree {
+  to_digraph(Self) -> Digraph
 }
 
 // Type aliases
