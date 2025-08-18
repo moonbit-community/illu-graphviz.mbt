@@ -54,12 +54,12 @@ fn dump_ast(self : Expr) -> Digraph {
 test (t : @test.T) {
   let expr = Add(Add(Lit(3), Lit(5)), Add(Lit(7), Lit(8)))
   t.writeln(expr.eval_path())
-  t.snapshot!(filename="expr.dot")
+  t.snapshot(filename="expr.dot")
 }
 
 ///|
 test (t : @test.T) {
   let expr = Add(Add(Lit(3), Lit(5)), Add(Lit(7), Lit(8)))
   t.writeln(expr.dump_ast())
-  t.snapshot!(filename="ast.dot")
+  t.snapshot(filename="ast.dot")
 }
