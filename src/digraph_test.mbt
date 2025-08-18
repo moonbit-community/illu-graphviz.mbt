@@ -23,7 +23,6 @@ fn eval_path(self : Expr) -> Digraph {
         (v, from)
       }
       Lit(v) => {
-        let id = cnt
         nodes.push(Node::new(id=cnt, label=v.to_string()))
         (v, cnt)
       }
@@ -38,11 +37,7 @@ fn eval_path(self : Expr) -> Digraph {
 fn dump_ast(self : Expr) -> Digraph {
   fn dfs(self : Expr) -> Tree {
     match self {
-      Add(l, r) => {
-        let tl = dfs(l)
-        let tr = dfs(r)
-        Tree::{ label: "+", children: [dfs(l), dfs(r)] }
-      }
+      Add(l, r) => Tree::{ label: "+", children: [dfs(l), dfs(r)] }
       Lit(x) => Tree::{ label: x.to_string(), children: [] }
     }
   }
