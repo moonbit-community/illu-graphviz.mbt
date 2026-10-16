@@ -1,0 +1,15 @@
+name = "illusory0x0/graphviz"
+
+version = "0.1.2"
+
+readme = "README.md"
+
+repository = "https://github.com/illusory0x0/graphviz.mbt"
+
+license = "Apache-2.0"
+
+keywords = [ "graphviz", "graph", "tree" ]
+
+description = ""
+
+source = "src"
